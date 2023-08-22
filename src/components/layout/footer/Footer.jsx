@@ -3,7 +3,7 @@ export const Footer = () => {
     <div
       style={{
         margin:"90px",
-        marginTop: "90px",
+        marginTop: "100px",
         fontSize: "30px",
       }}
     >
