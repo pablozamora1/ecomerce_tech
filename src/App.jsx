@@ -3,11 +3,11 @@ import { Navbar } from "./components/layout/navbar/Navbar";
 import { ItemListContainer } from "./components/pages/itemListContainer/ItemListContainer";
 
 const App = () => {
-  let productos = "aca estan los productos";
+  
   return (
     <div>
       <Navbar />
-      <ItemListContainer productos={productos} />
+      <ItemListContainer />
       <Footer />
     </div>
   );
