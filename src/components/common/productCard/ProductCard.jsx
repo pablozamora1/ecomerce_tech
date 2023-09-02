@@ -20,7 +20,7 @@ const ProductCard = ({elemento}) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" variant="contained">ADD </Button>
+        <Button size="small" variant="contained">Ver detalle </Button>
         
       </CardActions>
     </Card>
