@@ -1,11 +1,18 @@
-const ItemCount = ({ contador, setContador }) => {
+import { useCount } from "../../Hooks/useCount";
+
+
+const ItemCount = () => {
+    const {count ,decrement ,increment ,reset} = useCount(1,15)
   return (
     <div>
-      <h2>{contador}</h2>
-      <button onClick={() => setContador(contador + 1)}>Sumar</button>
-      <button onClick={() => setContador(contador - 1)}>Restar</button>
+        <div>
+        <button onClick={decrement}> - </button>
+        <span>{count}</span>
+        <button onClick={increment}> + </button>
+        </div>
+        <button onClick={reset}> reset </button>
     </div>
-  );
-};
+  )
+}
 
-export default ItemCount;
+export default ItemCount

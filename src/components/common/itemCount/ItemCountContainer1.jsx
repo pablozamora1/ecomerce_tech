@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import ItemCount from "./ItemCount"
-const ItemCountContainer = () => {
+const ItemCountContainer1 = () => {
 
     const [contador, setContador] = useState(1);
   return (
@@ -9,4 +9,4 @@ const ItemCountContainer = () => {
   )
 }
 
-export default ItemCountContainer
+export default ItemCountContainer1
