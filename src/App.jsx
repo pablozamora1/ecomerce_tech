@@ -22,9 +22,3 @@ const App = () => {
 };
 
 export default App;
-
-//  <Navbar />
-//     <ItemListContainer />
-//     <FetchingDeDatosContainer/>
-//     <ItemDetailContainer/>
-//     <Footer />
