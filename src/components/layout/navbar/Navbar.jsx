@@ -1,5 +1,6 @@
 import { CartWidget } from "../../common/cartWidget/CartWidget";
 import styles from "./Navbar.module.css";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
@@ -10,34 +11,28 @@ export const Navbar = () => {
           alignItems: "center",
         }}
       >
-        <h4>Compumundo Hipermegared</h4>
-        <img
-          src="https://res.cloudinary.com/dbgdadeox/image/upload/v1686532935/imagenes%20ecomerce%20react/homeroSimpsons_m49gox.jpg"
-          style={{
-            width: "100px",
-          }}
-        />
+        <Link to="/">
+          <h4>Compumundo Hipermegared</h4>
+          <img
+            src="https://res.cloudinary.com/dbgdadeox/image/upload/v1686532935/imagenes%20ecomerce%20react/homeroSimpsons_m49gox.jpg"
+            style={{
+              width: "100px",
+            }}
+          />
+        </Link>
       </div>
 
       <ul>
-        <li>
-          <a href="">Todos</a>
-        </li>
-        <li>
-          <a href="">PCs De Escritorio</a>
-        </li>
-        <li>
-          <a href="">Noteboks</a>
-        </li>
-        <li>
-          <a href="">Placas de Videos</a>
-        </li>
-        <li>
-          <a href="">Monitores</a>
-        </li>
+        <Link to="/">Todos</Link>
+        <Link to="/category/PC_escritorio">PCs De Escritorio</Link>
+        <Link to="/category/notebook">Noteboks</Link>
+        <Link to="/category/placaVideo">Placas de Videos</Link>
+        <Link to="/category/monitor">Monitores</Link>
       </ul>
       <div>
-        <CartWidget />
+        <Link to="/carrito">
+          <CartWidget />
+        </Link>
       </div>
     </div>
   );

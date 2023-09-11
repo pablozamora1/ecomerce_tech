@@ -1,15 +1,22 @@
 import { useEffect, useState } from "react";
-import ItemCountContainer from "../../common/itemCount/ItemCountContainer";
+
 import ItemList from "./ItemList";
 import { products } from "../../../productsMock";
+import { useParams } from "react-router-dom";
 
 export const ItemListContainer = () => {
   const [items, setItems] = useState([]);
+  const { categoryName } = useParams();
+  console.log(categoryName)
 
   useEffect(() => {
-    const tarea = new Promise((res, rejet) => {
+const filteredProducts = products.filter(
+  (products) => products.category === categoryName
+);
+
+    const tarea = new Promise((res) => {
       setTimeout(() => {
-        res(products);
+        res(categoryName ? filteredProducts : products);
       }, 500);
 
       // rejet(" la promesa salio mal");
@@ -22,12 +29,11 @@ export const ItemListContainer = () => {
       .catch((err) => {
         console.log("catch: ", err);
       });
-  }, []);
+  }, [categoryName]);
 
   return (
     <div>
       <ItemList items={items} />
-      <ItemCountContainer />
     </div>
   );
 };

@@ -1,12 +1,24 @@
-
+import CardDetail from "../../common/cardDetail/CardDetail";
+import styles from "./ItemDetail.module.css";
 
 const ItemDetail = ({ productSelected }) => {
+
+  const onAdd = (cantidad) => {
+    let data = {
+      ...productSelected,
+      quantity: cantidad,
+    };
+
+    console.log(data)
+  };
+
   return (
     <div>
-      <h2>{productSelected.title}</h2>
-      <img src={productSelected.img} alt="" />
+      <div className={styles.card}>
+        <CardDetail productSelected={productSelected} onAdd={onAdd} />
+      </div>
     </div>
   );
 };
 
-export default ItemDetail
+export default ItemDetail;

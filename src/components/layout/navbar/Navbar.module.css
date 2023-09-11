@@ -4,14 +4,14 @@
   justify-content: space-around;
   align-items: center;
   height: 170px;
-  background-color: #a4b73b;
+  background-color: #cad77d;
 }
 .navbar ul {
   list-style: none;
   display: flex;
   gap: 20px;
 }
-.navbar li a {
+.navbar ul a {
   background-color: #2f5022;
   border-radius: 20px;
   color: white;
@@ -25,4 +25,10 @@
 
 .navbar h4 {
   font-family: "roboto";
+}
+
+.navbar a {
+  
+  text-decoration: none;
+ 
 }
