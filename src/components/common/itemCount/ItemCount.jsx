@@ -1,8 +1,9 @@
 import { useCount } from "../../Hooks/useCount";
 import { Button, Container, Typography } from "@mui/material";
 
-const ItemCount = ({ stock, initial, onAdd }) => {
+const ItemCount = ({ stock, initial =1, onAdd }) => {
   const { count, decrement, increment } = useCount(initial, stock);
+  
 
   return (
     <Container sx={{ display: "inline-flex" }}>

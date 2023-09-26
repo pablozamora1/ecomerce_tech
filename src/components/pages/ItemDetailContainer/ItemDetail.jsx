@@ -1,21 +1,17 @@
 import CardDetail from "../../common/cardDetail/CardDetail";
 import styles from "./ItemDetail.module.css";
 
-const ItemDetail = ({ productSelected }) => {
+const ItemDetail = ({ productSelected, onAdd, cantidad }) => {
 
-  const onAdd = (cantidad) => {
-    let data = {
-      ...productSelected,
-      quantity: cantidad,
-    };
-
-    console.log(data)
-  };
-
+  
   return (
     <div>
       <div className={styles.card}>
-        <CardDetail productSelected={productSelected} onAdd={onAdd} />
+        <CardDetail
+          productSelected={productSelected}
+          cantidad={cantidad}
+          onAdd={onAdd}
+        />
       </div>
     </div>
   );

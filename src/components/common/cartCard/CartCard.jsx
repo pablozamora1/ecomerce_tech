@@ -7,9 +7,8 @@ import {
   Container,
   Typography,
 } from "@mui/material";
-import ItemCount from "../itemCount/ItemCount";
 
-const CardDetail = ({ productSelected, onAdd, cantidad }) => {
+const CartCard = ({ product }) => {
   return (
     <div>
       <Card
@@ -20,9 +19,9 @@ const CardDetail = ({ productSelected, onAdd, cantidad }) => {
       >
         <Box>
           <CardMedia
-            sx={{ width: 400, height: 350 }}
-            image={productSelected.img}
-            title="productSelected"
+            sx={{ width: 200, height: 150 }}
+            image={product.img}
+            title="product"
           />
         </Box>
         <Container
@@ -37,19 +36,19 @@ const CardDetail = ({ productSelected, onAdd, cantidad }) => {
         >
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              {productSelected.title}
+              {product.title}
             </Typography>
             <Typography variant="body2" color="text.secondary">
               Modelo:
-              {productSelected.description}
+              {product.description}
             </Typography>
             <Typography variant="body2" color="text.secondary">
               Precio:
-              {productSelected.price}
+              {product.price}
             </Typography>
             <Typography variant="body2" color="text.secondary">
               Stock:
-              {productSelected.stock}
+              {product.quantity}
             </Typography>
           </CardContent>
           <CardActions
@@ -57,11 +56,7 @@ const CardDetail = ({ productSelected, onAdd, cantidad }) => {
               p: 6,
             }}
           >
-            <ItemCount
-              stock={productSelected.stock}
-              initial={cantidad}
-              onAdd={onAdd}
-            />
+
           </CardActions>
         </Container>
       </Card>
@@ -69,4 +64,4 @@ const CardDetail = ({ productSelected, onAdd, cantidad }) => {
   );
 };
 
-export default CardDetail;
+export default CartCard;
