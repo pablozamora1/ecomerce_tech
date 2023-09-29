@@ -1,10 +1,13 @@
 import { createContext, useState } from "react";
 
+
 export const CartContext = createContext();
 
 const CartContexProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
-console.log(cart)
+  const [cart, setCart] = useState(
+    JSON.parse(localStorage.getItem("cart")) || []
+  );
+
   const AddCart = (newProduct) => {
     let exist = isInCart(newProduct.id);
     if (exist) {
@@ -19,8 +22,10 @@ console.log(cart)
         }
       });
       setCart(newArray);
+      localStorage.setItem("cart", JSON.stringify(newArray));
     } else {
       setCart([...cart, newProduct]);
+      localStorage.setItem("cart", JSON.stringify([...cart, newProduct]));
     }
   };
 
@@ -31,11 +36,15 @@ console.log(cart)
 
   const clearCart = () => {
     setCart([]);
+    
+    localStorage.removeItem("cart")
+
   };
 
   const deleteById = (id) => {
     let newArray = cart.filter((product) => product.id !== id);
     setCart(newArray);
+    localStorage.setItem("cart", JSON.stringify(newArray));
   };
 
   const getTotalQuantityById = (id) => {
