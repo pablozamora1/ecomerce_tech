@@ -4,7 +4,7 @@ export const CartContext = createContext();
 
 const CartContexProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-
+console.log(cart)
   const AddCart = (newProduct) => {
     let exist = isInCart(newProduct.id);
     if (exist) {
@@ -39,9 +39,27 @@ const CartContexProvider = ({ children }) => {
   };
 
   const getTotalQuantityById = (id) => {
-    let producto = cart.find(prod =>prod.id === +id)
-    return producto?.quantity
+    let producto = cart.find((prod) => prod.id === +id);
+    return producto?.quantity;
   };
+
+  const getTotalItems = () => {
+    let total = cart.reduce((acc, elemento) => {
+      return acc + elemento.quantity;
+    }, 0);
+    return total;
+  };
+
+  const getTotalPrice = () => {
+    let total = cart.reduce((acc, elemento) => {
+      return acc + (elemento.quantity * elemento.price)
+    }, 0);
+    return total;
+  };
+
+  
+
+  
 
   let data = {
     cart,
@@ -49,6 +67,8 @@ const CartContexProvider = ({ children }) => {
     clearCart,
     deleteById,
     getTotalQuantityById,
+    getTotalItems,
+    getTotalPrice,
   };
 
   return <CartContext.Provider value={data}> {children} </CartContext.Provider>;

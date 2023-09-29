@@ -2,7 +2,7 @@ export const products = [
   {
     id: 1,
     title: "PC AMD",
-    price: "$103079",
+    price: 103079,
     stock: 7,
     description: "E1-6010 8GB SSD 240GB SERIE Y PARALELO",
     category: "PC_escritorio",
@@ -11,7 +11,7 @@ export const products = [
   {
     id: 2,
     title: "PC INTEL",
-    price: "$119990",
+    price: 119990,
     stock: 2,
     description: "INTEL CELERON DUAL CORE G5905 SSD 240",
     category: "PC_escritorio",
@@ -20,7 +20,7 @@ export const products = [
   {
     id: 3,
     title: "NOTEBOOK LENOVO",
-    price: "$224990",
+    price: 224990,
     stock: 6,
     description: "NOTEBOOK LENOVO V15 PENTIUM N5030 4GB 1TB 15.6",
     category: "notebook",
@@ -29,7 +29,7 @@ export const products = [
   {
     id: 4,
     title: "NOTEBOOK ASUS",
-    price: "$17800",
+    price: 17800,
     stock: 4,
     description: "NOTEBOOK ASUS X515EA I3 1115G4 4GB SSD 256GB 15.6 FHD",
     category: "notebook",
@@ -38,7 +38,7 @@ export const products = [
   {
     id: 5,
     title: "PLACA DE VIDEO",
-    price: "$74999",
+    price: 74999,
     stock: 5,
     description: "POWERCOLOR RX550 4GB GDDR5",
     category: "placaVideo",
@@ -47,7 +47,7 @@ export const products = [
   {
     id: 6,
     title: "PLACA DE VIDEO",
-    price: "$139999",
+    price: 139999,
     stock: 3,
     description: "NVIDIA GEFORCE GTX 1650 4GB",
     category: "placaVideo",
@@ -56,7 +56,7 @@ export const products = [
   {
     id: 7,
     title: "MONITOR 19 LED",
-    price: "$36999",
+    price: 36999,
     stock: 7,
     description: "PHILIPS 193V5LHSB2/55 HDMI",
     category: "monitor",
@@ -65,7 +65,7 @@ export const products = [
   {
     id: 8,
     title: "MONITOR 24 LED",
-    price: "$47990",
+    price: 47990,
     stock: 6,
     description: "PHILIPS FHD LCD 75HZ",
     category: "monitor",
