@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom";
-// import { Navbar } from "./navbar/Navbar";
 import Footer from "./footer/Footer";
-import { Navbar } from "./navbar/Navbar";
+import Navbar from "./navbar/Navbar";
+
 
 const Layout = () => {
   return (
     <div>
-      <Navbar />
+      <Navbar/>
       <div style={{ minHeight: "100vh" }}>
         <Outlet />
       </div>

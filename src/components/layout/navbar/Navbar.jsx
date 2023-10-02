@@ -2,9 +2,13 @@ import { CartWidget } from "../../common/cartWidget/CartWidget";
 import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 
-export const Navbar = () => {
+
+
+
+
+const Navbar = () => {
   return (
-    <div className={styles.navbar}>
+        <div className={styles.navbar}>
       <div
         style={{
           width: "100px",
@@ -35,5 +39,7 @@ export const Navbar = () => {
         </Link>
       </div>
     </div>
-  );
-};
+  )
+}
+
+export default Navbar
