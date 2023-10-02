@@ -23,6 +23,7 @@ const CardDetail = ({ productSelected, onAdd, cantidad }) => {
             sx={{ width: 400, height: 350 }}
             image={productSelected.img}
             title="productSelected"
+            component="div"
           />
         </Box>
         <Container
@@ -44,8 +45,7 @@ const CardDetail = ({ productSelected, onAdd, cantidad }) => {
               {productSelected.description}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Precio:
-              {productSelected.price}
+              Precio: $ {productSelected.price}
             </Typography>
             <Typography variant="body2" color="text.secondary">
               Stock:
