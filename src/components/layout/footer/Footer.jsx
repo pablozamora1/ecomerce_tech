@@ -1,4 +1,4 @@
-export const Footer = () => {
+const Footer = () => {
   return (
     <div
       style={{
@@ -8,7 +8,9 @@ export const Footer = () => {
         backgroundColor: "#cad77d",
       }}
     >
-      <h3>aca el footer</h3>
+      <h3>aca el footerrrrr</h3>
     </div>
   );
 };
+
+export default Footer;

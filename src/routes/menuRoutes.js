@@ -26,11 +26,11 @@ export const menuRoutes = [
     path: "/carrito",
     Element: CartContainer,
   },
-  {
-    id: "formik",
-    path: "/formFormik",
-    Element: FormFormik,
-  },
+  // {
+  //   id: "formik",
+  //   path: "/formFormik",
+  //   Element: FormFormik,
+  // },
   {
     id: "checkout",
     path: "/checkout",
