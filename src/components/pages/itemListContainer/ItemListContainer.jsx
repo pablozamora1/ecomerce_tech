@@ -1,42 +1,41 @@
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
-import { products } from "../../../productsMock";
 import { useParams } from "react-router-dom";
 import Louder from "../../common/louder/Louder";
-
-
+import { db } from "../../../firebaseConfig";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 export const ItemListContainer = () => {
   const [items, setItems] = useState([]);
   const { categoryName } = useParams();
 
   useEffect(() => {
-    const filteredProducts = products.filter(
-      (products) => products.category === categoryName
-    );
+    let itemCollection = collection(db, "products");
+    let consulta;
 
-    const tarea = new Promise((res) => {
-      setTimeout(() => {
-        res(categoryName ? filteredProducts : products);
-      }, 500);
+    if (!categoryName) {
+      consulta = itemCollection;
+    } else {
+      consulta = query(itemCollection, where("category", "==", categoryName));
+    }
 
-      // rejet(" la promesa salio mal");
-    });
-
-    tarea
+    getDocs(consulta)
       .then((res) => {
-        setItems(res);
+        let products = res.docs.map((elemento) => {
+          return {
+            ...elemento.data(),
+            id: elemento.id,
+          };
+        });
+        setItems(products);
       })
-      .catch((err) => {
-        console.log("catch: ", err);
-      });
+      .catch((err) => console.log(err));
   }, [categoryName]);
 
-  if (items.length ===0 ) {
+  if (items.length === 0) {
     return (
-      <div
-      >
-        <Louder/>
+      <div>
+        <Louder />
       </div>
     );
   }

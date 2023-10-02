@@ -1,21 +1,20 @@
 import { useContext, useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
-import { products } from "../../../productsMock";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../../context/CartContex";
+import { db } from "../../../firebaseConfig";
+import { collection, getDoc, doc } from "firebase/firestore";
 import Swal from "sweetalert2";
-
-
 
 const ItemDetailContainer = () => {
   const [productSelected, setProductSelected] = useState({});
-  
+
   const { AddCart, getTotalQuantityById } = useContext(CartContext);
 
-  const {id} = useParams()
+  const { id } = useParams();
 
-  const cantidad = getTotalQuantityById(id)
-  
+  const cantidad = getTotalQuantityById(id);
+
   const onAdd = (cantidad) => {
     let data = {
       ...productSelected,
@@ -33,24 +32,14 @@ const ItemDetailContainer = () => {
     });
   };
 
-
   useEffect(() => {
-    let producFind = products.find((product) => product.id === +id);
-    const getProduct = new Promise((res,) => {
-      setTimeout(() => {
-        res(producFind);
-      }, 500);
-        
+    let itemCollection = collection(db, "products");
+    let refDoc = doc(itemCollection, id);
+    getDoc(refDoc).then((res) => {
+      setProductSelected({ ...res.data(), id: res.id });
     });
-
-    getProduct
-    
-      .then((res) => setProductSelected(res))
-      .catch((err) => console.log(err));
   }, [id]);
 
-
- 
   return (
     <div>
       <ItemDetail
