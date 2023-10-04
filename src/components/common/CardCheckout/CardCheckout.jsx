@@ -15,7 +15,7 @@ const CardCheckout = ({ orderId }) => {
             component="img"
             height="400"
             image="https://res.cloudinary.com/dbgdadeox/image/upload/v1696394034/homero_felicitando_v9moxy.jpg"
-            alt="green iguana"
+            alt="Compra finalizada"
           />
           <CardContent>
             <Typography gutterBottom variant="h4" component="div">

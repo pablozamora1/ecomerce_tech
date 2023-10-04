@@ -16,6 +16,7 @@ const CardDetail = ({ productSelected, onAdd, cantidad }) => {
         sx={{
           display: "inline-flex",
           alignItems: "center",
+          p: 2,
         }}
       >
         <Box>
