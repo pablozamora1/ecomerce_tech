@@ -10,14 +10,14 @@ import { Link } from "react-router-dom";
 
 const ProductCard = ({ elemento }) => {
   return (
-    <Card sx={{ width: 300 }}>
+    <Card sx={{ width: 300, height: 500 }}>
       <CardMedia
-        sx={{ height: 300 }}
+        sx={{ height: 300, pt: 2 }}
         image={elemento.img}
         title="productos"
         component="div"
       />
-      <CardContent>
+      <CardContent sx={{ height: 90 }}>
         <Typography gutterBottom variant="h5" component="div">
           {elemento.title}
         </Typography>

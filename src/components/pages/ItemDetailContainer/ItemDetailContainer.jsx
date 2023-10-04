@@ -5,6 +5,7 @@ import { CartContext } from "../../../context/CartContex";
 import { db } from "../../../firebaseConfig";
 import { collection, getDoc, doc } from "firebase/firestore";
 import Swal from "sweetalert2";
+import Louder from "../../common/louder/Louder";
 
 const ItemDetailContainer = () => {
   const [productSelected, setProductSelected] = useState({});
@@ -39,6 +40,16 @@ const ItemDetailContainer = () => {
       setProductSelected({ ...res.data(), id: res.id });
     });
   }, [id]);
+
+  if (productSelected.price === undefined) {
+    return (
+      <div>
+        <Louder />
+      </div>
+    );
+  }
+
+ 
 
   return (
     <div>

@@ -5,6 +5,9 @@ import { db } from "../../../firebaseConfig";
 import { addDoc, collection, updateDoc, doc } from "firebase/firestore";
 import { useContext, useState } from "react";
 import { CartContext } from "../../../context/CartContex";
+import CardCheckout from "../../common/CardCheckout/CardCheckout";
+
+
 
 const CheckoutContainer = () => {
   const { cart, getTotalPrice, clearCart } = useContext(CartContext);
@@ -51,13 +54,12 @@ const CheckoutContainer = () => {
     }),
   });
 
+
+
   return (
     <div>
       {orderId ? (
-        <h1>
-          su compra se ha realizado correctamente ,el numero de comprobante es:{" "}
-          {orderId.id}
-        </h1>
+        <CardCheckout orderId={orderId} />
       ) : (
         <Checkout
           handleSubmit={handleSubmit}

@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-        <div className={styles.navbar}>
+    <div className={styles.navbar}>
       <div
         style={{
           width: "100px",
@@ -16,11 +16,11 @@ const Navbar = () => {
         }}
       >
         <Link to="/">
-          <h4>Compumundo Hipermegared</h4>
+          
           <img
-            src="https://res.cloudinary.com/dbgdadeox/image/upload/v1686532935/imagenes%20ecomerce%20react/homeroSimpsons_m49gox.jpg"
+            src="https://res.cloudinary.com/dbgdadeox/image/upload/v1696392142/homero_xgw2g3.png"
             style={{
-              width: "100px",
+              width: "150px",
             }}
           />
         </Link>
@@ -39,7 +39,7 @@ const Navbar = () => {
         </Link>
       </div>
     </div>
-  )
+  );
 }
 
 export default Navbar

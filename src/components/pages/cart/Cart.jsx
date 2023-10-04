@@ -34,6 +34,12 @@ const Cart = ({ cart, fnClearCart, fndeleteById, total, TotalItems }) => {
           })}
         </div>
         <div className="cart-info">
+          <img
+            src="https://res.cloudinary.com/dbgdadeox/image/upload/v1686532935/imagenes%20ecomerce%20react/homeroSimpsons_m49gox.jpg"
+            style={{
+              width: "200px",
+            }}
+          />
           <Typography variant="h4" color="text.secondary">
             Descripcion del carrito
           </Typography>

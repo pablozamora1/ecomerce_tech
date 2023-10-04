@@ -20,7 +20,7 @@ const CardDetail = ({ productSelected, onAdd, cantidad }) => {
       >
         <Box>
           <CardMedia
-            sx={{ width: 400, height: 350 }}
+            sx={{ width: 400, height: 450 }}
             image={productSelected.img}
             title="productSelected"
             component="div"
@@ -52,16 +52,23 @@ const CardDetail = ({ productSelected, onAdd, cantidad }) => {
               {productSelected.stock}
             </Typography>
           </CardContent>
+
           <CardActions
             sx={{
               p: 6,
             }}
           >
-            <ItemCount
-              stock={productSelected.stock}
-              initial={cantidad}
-              onAdd={onAdd}
-            />
+            {productSelected.stock > 0 ? (
+              <ItemCount
+                stock={productSelected.stock}
+                initial={cantidad}
+                onAdd={onAdd}
+              />
+            ) : (
+              <Typography variant="h5" color="text.secondary">
+                Ups, nos quedamos sin stock
+              </Typography>
+            )}
           </CardActions>
         </Container>
       </Card>
