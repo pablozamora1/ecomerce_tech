@@ -7,13 +7,10 @@ const CartContainer = () => {
   const { cart, clearCart, deleteById, getTotalPrice, getTotalItems } =
     useContext(CartContext);
 
-    let total = getTotalPrice()
-    let TotalItems = getTotalItems();
-
-    
+  let total = getTotalPrice();
+  let TotalItems = getTotalItems();
 
   const fnClearCart = () => {
-
     Swal.fire({
       title: "Quieres limpiar el carrito?",
       showDenyButton: true,
@@ -29,19 +26,18 @@ const CartContainer = () => {
         Swal.fire("No se limpio el carrito", "", "info");
       }
     });
-  }
+  };
 
   const fndeleteById = (id) => {
     deleteById(id);
     Swal.fire({
       position: "center",
-      icon: "",
+      icon: "success",
       title: "Listo! Eliminaste el producto",
       showConfirmButton: false,
       timer: 5000,
     });
-  }
-  
+  };
 
   return (
     <div>

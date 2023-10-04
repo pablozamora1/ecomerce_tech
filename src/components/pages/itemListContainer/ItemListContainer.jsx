@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import Louder from "../../common/louder/Louder";
 import { db } from "../../../firebaseConfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
-import AgregarDocs from "../../../AgregarDocs";
 
 export const ItemListContainer = () => {
   const [items, setItems] = useState([]);
