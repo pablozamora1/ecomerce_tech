@@ -14,3 +14,4 @@ cuenta con filtrado por categorias ,se puede ver el detalle del producto en una 
 - Para el Deploy utilice Vercel
 -  https://ecomerce-tech.vercel.app/
 
+![](./animacion.gif)
